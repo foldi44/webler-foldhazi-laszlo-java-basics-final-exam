@@ -3,11 +3,11 @@ import java.io.IOException;
 
 public class FileReader {
 
-    static String osType = OSName.getOSName();
+    static String oSType = OSName.getOSName();
     public static String getPath() {
         String pathResources;
         char firstC = 'W';
-        if (osType.charAt(0) == firstC) {
+        if (oSType.charAt(0) == firstC) {
             pathResources = "resources\\products.txt";
         } else {
             pathResources = "resources/products.txt";
@@ -16,7 +16,7 @@ public class FileReader {
     }
 
     static String path = getPath();
-    public static String[] fileReader() {
+    public static String[] readFile() {
         BufferedReader reader = null;
         String[] products = null;
         int count = 0;
@@ -25,7 +25,6 @@ public class FileReader {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (!line.isEmpty()){
-                    System.out.println(count);
                     count++;
                 }
             }
@@ -35,8 +34,6 @@ public class FileReader {
             while ((line = reader.readLine()) != null) {
                 if (!line.isEmpty()){
                     products[i] = line;
-                    System.out.println(products[i]);
-                    System.out.println("--");
                     i++;
                 }
             }
@@ -50,7 +47,6 @@ public class FileReader {
                     System.out.println("Error closing the file " + e.getMessage());
                 }
             }
-
         }
         return products;
     }
