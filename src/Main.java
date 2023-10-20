@@ -13,5 +13,11 @@ public class Main {
             System.out.println(i);
             System.out.println("---s----");
         }
+
+        String[] filteredProducts = ArrayFilter.arrayFiltration(products,target);
+        for (String i : filteredProducts) {
+            System.out.println(i);
+            System.out.println("---f----");
+        }
     }
 }
