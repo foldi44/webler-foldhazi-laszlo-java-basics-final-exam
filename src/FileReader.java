@@ -3,20 +3,10 @@ import java.io.IOException;
 
 public class FileReader {
 
-    static String oSType = OSName.getOSName();
-    public static String getPath() {
-        String pathResources;
-        char firstC = 'W';
-        if (oSType.charAt(0) == firstC) {
-            pathResources = "resources\\products.txt";
-        } else {
-            pathResources = "resources/products.txt";
-        }
-        return pathResources;
-    }
+    static String oSSlash = OSPath.getOSPath();
 
-    static String path = getPath();
     public static String[] readFile() {
+        String path = "resources" + oSSlash + "products.txt";
         BufferedReader reader = null;
         String[] products = null;
         int count = 0;

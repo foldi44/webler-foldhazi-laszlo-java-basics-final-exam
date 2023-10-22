@@ -3,21 +3,22 @@ public class Main {
         String target = "coca-cola";
 
         String[] products = FileReader.readFile();
-        for (String i : products) {
-            System.out.println(i);
-            System.out.println("--------");
-        }
 
         String[] sortedProducts = ArraySorter.arraySort(products);
-        for (String i : sortedProducts) {
-            System.out.println(i);
-            System.out.println("---s----");
-        }
 
         String[] filteredProducts = ArrayFilter.arrayFiltration(products,target);
-        for (String i : filteredProducts) {
-            System.out.println(i);
-            System.out.println("---f----");
-        }
+
+        String[] productsWithoutDuplication = DuplicationFilter.duplicationFiltration(products);
+
+        String duplicationValidation = DuplicationFilter.duplicationValidator(products, productsWithoutDuplication);
+
+        String fileWriterResult = FileWriter.fileWriter(sortedProducts);
+
+        ArrayPrinter.arrayPrint(products,"o");
+        ArrayPrinter.arrayPrint(sortedProducts,"s");
+        ArrayPrinter.arrayPrint(filteredProducts,"f");
+        ArrayPrinter.arrayPrint(productsWithoutDuplication,"df");
+        System.out.println(duplicationValidation);
+        System.out.println(fileWriterResult);
     }
 }
