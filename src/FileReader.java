@@ -1,10 +1,20 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-
+/**
+ * The FileReader class provides methods for reading data from a file.
+ */
 public class FileReader {
 
+    /**
+     * The path separator determined by the operating system.
+     */
     static String oSSlash = OSPath.getOSPath();
 
+    /**
+     * Reads data from a file and returns it as an array of strings.
+     *
+     * @return An array of strings containing the lines read from the file, or null if an error occurs.
+     */
     public static String[] readFile() {
         String path = "resources" + oSSlash + "products.txt";
         BufferedReader reader = null;

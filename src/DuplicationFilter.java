@@ -1,5 +1,14 @@
+/**
+ * The DuplicationFilter class provides methods for filtering duplicate entries within an array of product names.
+ */
 public class DuplicationFilter {
 
+    /**
+     * Filters duplicate product names from the input array.
+     *
+     * @param products An array of product names.
+     * @return An array of product names without duplicates.
+     */
     public static String[] duplicationFiltration (String[] products) {
 
         int arrayLength = products.length;
@@ -44,6 +53,13 @@ public class DuplicationFilter {
         return productsWithoutDuplication;
     }
 
+    /**
+     * Validates the level of duplication in the product names array.
+     *
+     * @param products                An array of all product names.
+     * @param productsWithoutDuplication An array of product names without duplicates.
+     * @return A message indicating whether the level of duplication is acceptable or excessive.
+     */
     public static String duplicationValidator(String[] products,String[] productsWithoutDuplication){
         int x = products.length-productsWithoutDuplication.length;
         String duplicationValidation;

@@ -3,20 +3,23 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * In the "FileWriter" class, there are four functions. The first one is "getDate," which returns the current date in String format. This is needed because we will store the output text file in a folder created with the current date.
- *
- * In the second function ("dirCreate"), using the date returned by the previous function, we create the output folder. If this operation fails, we send an error message.
- *
- * In the third function ("fileCreate"), we obtain the folder name by calling the first function and generate the file name with the operating system's path separator, which is stored in the "pathName" variable as a relative path. Using this, we create the file.
- *
- * In the fourth function ("fileWriter"), we write the elements of an array ("sortedProducts") passed as an argument in the Main class to the created file with error handling. As a return value, we print in the Main class whether the file writing was successful.
+ * The FileWriter class provides methods for creating directories, files, and writing data to a file.
  */
-
 public class FileWriter {
+
+    /**
+     * Retrieves the current date as a string.
+     *
+     * @return A string representing the current date in the format "yyyy-MM-dd."
+     */
     private static String getDate(){
         String date = String.valueOf(java.time.LocalDate.now());
         return date;
     }
+
+    /**
+     * Creates a directory with the current date as its name.
+     */
     private static void dirCreate(){
         String date = getDate();
         File newDir = new File(date);
@@ -27,6 +30,11 @@ public class FileWriter {
         }
     }
 
+    /**
+     * Creates a file into the previously created folder.
+     *
+     * @return The path to the created file.
+     */
     private static String fileCreate() {
         dirCreate();
         String date = getDate();
@@ -42,6 +50,13 @@ public class FileWriter {
         }
         return pathName;
     }
+
+    /**
+     * Writes an array of sorted products to a file and returns a status message.
+     *
+     * @param sortedProducts An array of product data to be written to the file.
+     * @return A status message indicating whether the file writing was successful.
+     */
     public static String fileWriter(String[] sortedProducts) {
         String pathName = fileCreate();
         String fileStatment;
