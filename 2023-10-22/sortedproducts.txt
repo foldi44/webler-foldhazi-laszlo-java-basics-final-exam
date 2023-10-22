@@ -1,0 +1,18 @@
+1,alma,5 kg
+2,coca-cola light,2 l
+3,kenyér,1 kg
+5,COCA-COLA ZERO
+6,szalámi,1 rúd
+7,szalámi szeletelt,200 g
+8,kalács,0.5 kg
+9,coca-cola,0.5 l
+10,zsemle,6 db
+11,körte,15 kg
+12,tej,1 liter
+13,vaj,200 g
+15,sprite,2 l
+16,coca-cola LIGHT,0.5 l
+19,sprite,0,5 l
+23,párizsi,1kg
+25,coca-cola,2 l
+26,COCA COLA,2 l
